@@ -1,0 +1,114 @@
+.formContainer {
+  background-color: #a7bcff;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .formWrapper {
+    background-color: white;
+    padding: 20px 60px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+
+    .logo {
+      color: #5d5b8d;
+      font-weight: bold;
+      font-size: 24px;
+    }
+
+    .title {
+      color: #5d5b8d;
+      font-size: 12px;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+
+      input {
+        padding: 15px;
+        border: none;
+        width: 250px;
+        border-bottom: 1px solid #a7bcff;
+      }
+    }
+    button {
+      background-color: #7b96ec;
+      color: white;
+      padding: 10px;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+    }
+  }
+  p {
+    color: #5d5b8d;
+    font-size: 12px;
+    margin-top: 10px;
+  }
+}
+.chatContainer {
+  background-color: #a7bcff;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .chatWrapper {
+    background-color: white;
+    width: 70%;
+    height: 80%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .chatHeader {
+      width: 100%;
+      background-color: #7b96ec;
+      padding: 15px;
+      border-radius: 10px 10px 0 0;
+      text-align: center;
+      color: white;
+      font-weight: bold;
+    }
+
+    .chatMessages {
+      flex: 1;
+      padding: 20px;
+      overflow-y: auto;
+      width: 100%;
+      border-top: 1px solid #a7bcff;
+      border-bottom: 1px solid #a7bcff;
+    }
+
+    .chatInputWrapper {
+      width: 100%;
+      display: flex;
+      padding: 15px;
+      background-color: #f0f0f0;
+
+      input {
+        flex: 1;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        margin-right: 10px;
+      }
+
+      button {
+        background-color: #7b96ec;
+        color: white;
+        padding: 10px 20px;
+        font-weight: bold;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+    }
+  }
+}
