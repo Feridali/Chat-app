@@ -112,3 +112,114 @@
     }
   }
 }
+$primary-color: #007bff;
+$primary-hover-color: #0056b3;
+$self-bg-color: #dcf8c6;
+$other-bg-color: #f1f0f0;
+$border-color: #ccc;
+
+.chatContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+
+  .chatWrapper {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .chatHeader {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+      border-bottom: 1px solid $border-color;
+      background-color: $primary-color;
+      color: white;
+
+      button {
+        background-color: white;
+        color: $primary-color;
+        border: none;
+        padding: 5px 10px;
+        border-radius: 5px;
+        cursor: pointer;
+
+        &:hover {
+          background-color: lighten($primary-color, 10%);
+        }
+      }
+    }
+
+    .chatMessages {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      padding: 10px;
+      overflow-y: auto;
+
+      .message {
+        display: flex;
+        align-items: center;
+        margin: 10px 0;
+
+        &.self {
+          justify-content: flex-end;
+        }
+
+        &.other {
+          justify-content: flex-start;
+        }
+
+        .messageContent {
+          padding: 10px;
+          border-radius: 10px;
+          max-width: 60%;
+        }
+
+        &.self .messageContent {
+          background-color: $self-bg-color;
+        }
+
+        &.other .messageContent {
+          background-color: $other-bg-color;
+        }
+
+        .avatar {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          margin-right: 10px;
+        }
+      }
+    }
+
+    .chatInputWrapper {
+      display: flex;
+      padding: 10px;
+      border-top: 1px solid $border-color;
+
+      input {
+        flex-grow: 1;
+        padding: 10px;
+        border: 1px solid $border-color;
+        border-radius: 10px;
+        margin-right: 10px;
+      }
+
+      button {
+        padding: 10px 20px;
+        border: none;
+        background-color: $primary-color;
+        color: white;
+        border-radius: 10px;
+        cursor: pointer;
+
+        &:hover {
+          background-color: $primary-hover-color;
+        }
+      }
+    }
+  }
+}

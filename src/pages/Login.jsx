@@ -33,8 +33,10 @@ function Login() {
 
       if (data && response.ok) {
         setMessage("Login successful");
-        // Lagra token om inloggningen lyckades
+        // Lagra token och användaruppgifter om inloggningen lyckades
         localStorage.setItem("token", data.token);
+        localStorage.setItem("avatar", data.avatar); // Anta att avatar-URL skickas med svaret
+        localStorage.setItem("username", data.username); // Spara användarnamn
         navigate("/chat");
       } else {
         setMessage(data?.error || "Login failed");
@@ -63,7 +65,6 @@ function Login() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-
           <button type="submit">Sign in</button>
         </form>
         <p>{message}</p>
