@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import Login from "./Login";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Register({ csrfToken }) {
   const [name, setName] = useState("");
@@ -8,6 +8,7 @@ function Register({ csrfToken }) {
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
   const [avatar, setAvatar] = useState("");
+  const navigate = useNavigate();
 
   const handleRegister = async () => {
     if (!csrfToken) {
@@ -35,7 +36,7 @@ function Register({ csrfToken }) {
 
       // Kontrollera om svaret är OK och innehåller data
       if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}`);
+        throw new Error("Username or email already  exist");
       }
 
       // Kontrollera om det finns innehåll att parsa
@@ -44,6 +45,7 @@ function Register({ csrfToken }) {
 
       if (data && response.ok) {
         setMessage("Registration successful");
+        navigate("/");
       } else {
         setMessage(data?.error || "Registration failed");
       }
