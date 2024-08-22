@@ -223,3 +223,13 @@ $border-color: #ccc;
     }
   }
 }
+.sidenav {
+  background-color: white;
+  .logout-btn {
+    border-radius: 10px;
+    background-color: $primary-color;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+  }
+}

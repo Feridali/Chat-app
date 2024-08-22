@@ -12,7 +12,9 @@ function Login() {
 
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_BASE_URL}/auth/token`,
+        `${
+          process.env.VITE_BASE_URL || import.meta.env.VITE_BASE_URL
+        }/auth/token`,
         {
           method: "POST",
           headers: {

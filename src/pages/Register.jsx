@@ -18,7 +18,8 @@ function Register({ csrfToken }) {
 
     try {
       const response = await fetch(
-        import.meta.env.VITE_BASE_URL + "/auth/register",
+        (process.env.VITE_BASE_URL || import.meta.env.VITE_BASE_URL) +
+          "/auth/register",
         {
           method: "POST",
           headers: {
@@ -66,6 +67,7 @@ function Register({ csrfToken }) {
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
+
         <input
           type="email"
           placeholder="email"
