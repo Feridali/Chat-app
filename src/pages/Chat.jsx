@@ -41,15 +41,12 @@ function Chat() {
     }
 
     // Hämta meddelanden om token finns
-    fetch(
-      `${process.env.VITE_BASE_URL || import.meta.env.VITE_BASE_URL}/messages`,
-      {
-        method: "GET",
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      }
-    )
+    fetch(`${import.meta.env.VITE_BASE_URL}/messages`, {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
       .then((res) => {
         if (!res.ok) {
           throw new Error("Failed to fetch messages");
@@ -72,9 +69,7 @@ function Chat() {
 
       try {
         const response = await fetch(
-          `${
-            process.env.VITE_BASE_URL || import.meta.env.VITE_BASE_URL
-          }/messages`,
+          `${import.meta.env.VITE_BASE_URL}/messages`,
           {
             method: "POST",
             headers: {
@@ -111,9 +106,7 @@ function Chat() {
 
     try {
       const response = await fetch(
-        `${
-          process.env.VITE_BASE_URL || import.meta.env.VITE_BASE_URL
-        }/messages/${messageId}`,
+        `${import.meta.env.VITE_BASE_URL}/messages/${messageId}`,
         {
           method: "DELETE",
           headers: {

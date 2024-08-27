@@ -18,8 +18,7 @@ function Register({ csrfToken }) {
 
     try {
       const response = await fetch(
-        (process.env.VITE_BASE_URL || import.meta.env.VITE_BASE_URL) +
-          "/auth/register",
+        import.meta.env.VITE_BASE_URL + "/auth/register",
         {
           method: "POST",
           headers: {
