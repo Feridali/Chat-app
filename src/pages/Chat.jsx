@@ -41,12 +41,15 @@ function Chat() {
     }
 
     // Hämta meddelanden om token finns
-    fetch(`${import.meta.env.VITE_BASE_URL}/messages`, {
-      method: "GET",
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    })
+    fetch(
+      `${process.env.VITE_BASE_URL || import.meta.env.VITE_BASE_URL}/messages`,
+      {
+        method: "GET",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    )
       .then((res) => {
         if (!res.ok) {
           throw new Error("Failed to fetch messages");
